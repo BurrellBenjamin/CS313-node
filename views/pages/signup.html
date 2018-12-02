@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Bulletin Board - Signup page</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Welcome to the Bulletin Board!</h1>
+            <br>
+            <h4>Registration</h4>
+        </div>
+        <script type="text/javascript">
+            function matchPasswords()
+            {
+                var password = document.getElementsByName("password")[1].value;
+                if (password.length < 8){
+                    var errorNode = document.createElement("P");
+                    var errorText = document.createTextNode("Passwords must be at least 8 characters");
+                    errorNode.appendChild(errorText);
+                    document.getElementById("regForm").insertBefore(errorNode, document.getElementsByName("password")[0]);
+                    return false;
+                }
+                    
+                var confirmPass = document.getElementsByName("confirmPassword")[1].value;
+                if (confirmPass.length < 8){
+                    var errorNode = document.createElement("P");
+                    var errorText = document.createTextNode("Passwords must be at least 8 characters");
+                    errorNode.appendChild(errorText);
+                    document.getElementById("regForm").insertBefore(errorNode, document.getElementsByName("confirmPassword")[0]);
+                    return false;
+                }
+                if(password.match(confirmPass))
+                    return true;
+                else{
+                    var errorNode = document.createElement("P");
+                    var errorText = document.createTextNode("Passwords must match; the passwords you entered were different");
+                    errorNode.appendChild(errorText);
+                    document.getElementById("regForm").appendChild(errorNode, document.getElementById("regForm").childNodes[1]);
+                    return false;
+                }
+            }
+        </script>
+        <div id='login'>
+            <form method="post" onsubmit="return matchPasswords()">
+                <pre id='regForm'>
+&#9<label>Username:</label>&#9<input type="text" name="user" maxLength = 80 required><br>
+<label name = "password">&#9Password:</label>&#9<input type="password" name="password" required><br>
+<label name = "confirmPassword">Confirm Password:</label>&#9<input type="password" name="confirmPassword" required>
+</pre>
+                <hr>
+                <button type="submit">Register</button>
+            </form>
+        
+</body>
+</html>
