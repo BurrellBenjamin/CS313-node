@@ -41,6 +41,6 @@ else{
 
     
 module.exports{
-    createAccount: createNewAccount
-    login:login;
-}
+    createAccount: createNewAccount,
+    login:login
+    }
