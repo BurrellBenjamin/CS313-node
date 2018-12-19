@@ -20,7 +20,8 @@ function login(userName, password){
         else{
             return db_results.rowCount;
         }
-    }) == 1)
+    }) == 1);
+    console.log("successlfully logged int");
 }
 var user_name = req.body.user;
 var password = req.body.password;
