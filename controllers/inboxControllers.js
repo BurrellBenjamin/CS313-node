@@ -21,4 +21,4 @@ function loadInbox(user, callback){
 }
 module.exports = {
     loadInbox: loadInbox
-}
+};

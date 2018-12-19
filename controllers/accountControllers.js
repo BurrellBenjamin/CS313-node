@@ -25,22 +25,8 @@ function login(userName, password){
     }
     
 }
-/*var user_name = req.body.user;
-var password = req.body.password;
     
-    
-{
-    req.session.user = user_name;
-    res.send({success : true});
-    res.render('pages/inbox.ejs', 
-    );
-}
-else{
-    res.send({success : false});
-}*/
-
-    
-module.exports{
+module.exports = {
     createAccount: createNewAccount,
     login:login
-    }
+};
