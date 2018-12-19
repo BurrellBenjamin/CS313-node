@@ -23,7 +23,7 @@ app.get('/signup.html', (req, res) => res.render('public/signup.html'))
 app.post('/login', async (req, res) => {
     accountController.login(req.body.user, req.body.password);
     res.render('views/inbox.ejs', {
-        user: user_name,
+        user: req.body.user,
         results : inboxController.loadInbox(user_name)
     });
 })
