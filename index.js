@@ -23,7 +23,7 @@ app.get('/', (req, res) => res.render('public/home.html'))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 app.get('/signup.html', (req, res) => res.render('public/signup.html'))
 app.post('/login', async (req, res) => {
-    accountController.login(req.body.user, req.body.password);
+    accountController.login(req.body.user.value, req.body.password.value);
     res.render('views/inbox.ejs', {
         user: user_name,
         results : inboxController.loadInbox(user_name)
