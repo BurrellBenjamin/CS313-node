@@ -21,7 +21,6 @@ function login(userName, password){
         if (err)
         {
             console.log("Failed Login");
-            throw err;
         }
         else{
             return db_results.rowCount;
