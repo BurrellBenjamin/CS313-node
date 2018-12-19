@@ -9,11 +9,7 @@ var session = require('express-session');
 
 const app = express();
 
-const {Pool} = require('pg')
 
-const db_url = process.env.DATABASE_URL;
-
-const pool = new Pool({connectionString: db_url})
 
 
 app.use(express.static(path.join(__dirname, 'public')))
