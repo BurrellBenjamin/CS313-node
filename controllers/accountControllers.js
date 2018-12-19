@@ -16,20 +16,21 @@ function createNewAccount(userName, password){
 }
 
 function login(userName, password){
-    var sql = "select userid from users where username = " + userName + " and password = " + password ;
-    if(pool.query(sql, function(err, db_results) {
+    var sql = "SELECT userid FROM users WHERE username = " + userName + " AND password = " + password ;
+    var results = pool.query(sql, function(err, db_results) {
         if (err)
         {
             console.log("Failed Login");
+            return false;
         }
         else{
+            console.log("successlfully logged in");
             return db_results.rowCount;
         }
-    }) == 1){
-        console.log("successlfully logged int");
+    })
+    return results;
     }
     
-}
     
 module.exports = {
     createAccount: createNewAccount,

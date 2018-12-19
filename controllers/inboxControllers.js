@@ -18,6 +18,7 @@ function loadInbox(user){
                success:true,
                list:db_results.rows
            };
+           console.log(results);
            return results;
        }
     });
