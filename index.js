@@ -24,6 +24,6 @@ app.post('/login', async (req, res) => {
     accountController.login(req.body.user, req.body.password);
     res.render('views/inbox.ejs', {
         user: req.body.user,
-        results : inboxController.loadInbox(user_name)
+        results : inboxController.loadInbox(req.body.user)
     });
 })
