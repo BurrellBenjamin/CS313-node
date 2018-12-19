@@ -4,7 +4,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const mysql = require('mysql');
 const inboxController = require("./controllers/inboxControllers.js");
-const accountController = require("./controllers/inboxControllers.js");
+const accountController = require("./controllers/accountControllers.js");
 var session = require('express-session');
 
 const app = express();
