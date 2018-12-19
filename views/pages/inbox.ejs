@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Bulletin Board-Inbox</title>
+    </head>
+    <body>
+        <div id='header'>
+            <h1>Welcome to the Bulletin Board!</h1>
+            <br>
+            <h4>Inbox for <%= user%></h4>
+        </div>
+        <div id = 'messages'>
+            <table id='Inbox'>
+                <tr>
+                    <th>From:</th>
+                    <th>Date</th>
+                    <th>Message</th>
+                </tr>
+            <% results.forEach(function(messages) { %>
+            
+                <tr>
+                    <td><%= messages.sourceUser%></td>
+                    <td>>%= messages.dateSent%></td>
+                    <td><%= messages.message%></td>
+                </tr>
+            <% }%>
+            </table>
+        </div>
+    </body>
+</html>
