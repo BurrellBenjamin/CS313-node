@@ -26,4 +26,5 @@ app.post('/login', async (req, res) => {
         user: user_name,
         results : inboxController.loadInbox(user_name)
     });
+    catch()
 })
