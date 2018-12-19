@@ -17,6 +17,7 @@ function createNewAccount(userName, password){
 
 function login(userName, password){
     var sql = "select userid from users where username = " + userName + " and password = " + password ;
+    console.log(sql);
     if(pool.query(sql, function(err, db_results) {
         if (err)
         {
